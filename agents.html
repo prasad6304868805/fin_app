@@ -154,7 +154,32 @@ border-radius:15px;
 border:1px solid #DCEEFF;
 outline:none;
 }
+.search-container{
+margin-top:20px;
+display:flex;
+gap:15px;
+align-items:center;
+}
 
+.search{
+flex:1;
+margin-top:0;
+}
+
+.add-agent-btn{
+background:linear-gradient(135deg,#1565C0,#4DA8FF);
+color:white;
+border:none;
+padding:15px 20px;
+border-radius:12px;
+font-weight:600;
+cursor:pointer;
+white-space:nowrap;
+}
+
+.add-agent-btn:hover{
+opacity:.9;
+}
 .agent-grid{
 margin-top:25px;
 display:grid;
@@ -263,7 +288,7 @@ text-align:center;
 <ul class="menu">
 
 <li>
-<a href="index.html">📊 Dashboard</a>
+<a href="dashboard.html">📊 Dashboard</a>
 </li>
 
 <li class="active">
@@ -289,8 +314,16 @@ text-align:center;
 
 </div>
 
+<div class="search-container">
+
 <div class="search">
 <input type="text" placeholder="Search Agent">
+</div>
+
+<button class="add-agent-btn" onclick="openAgentPopup()">
+➕ Add Agent
+</button>
+
 </div>
 
 <div class="agent-grid">
@@ -397,7 +430,104 @@ Balance Amount
 </div>
 
 </div>
+<div id="agentPopup" class="popup">
+
+<div class="popup-box">
+
+<h2 style="
+color:#1565C0;
+text-align:center;
+margin-bottom:20px;">
+➕ Add Agent
+</h2>
+
+<label>Profile Photo</label>
+<input
+type="file"
+id="agentPhoto"
+accept="image/*"
+capture="environment">
+<label>Agent ID</label>
+<input
+type="text"
+id="newAgentId"
+placeholder="AG005">
+
+<label>Full Name</label>
+<input
+type="text"
+id="newAgentName"
+placeholder="Enter Name">
+
+<label>Phone Number</label>
+<input
+type="text"
+id="newAgentPhone"
+placeholder="9876543210">
+
+<label>Email Address</label>
+<input
+type="email"
+id="newAgentEmail"
+placeholder="agent@gmail.com">
+
+<label>Password</label>
+<input
+type="password"
+id="newAgentPassword"
+placeholder="Enter Password">
+
+<label>Confirm Password</label>
+<input
+type="password"
+id="newAgentConfirmPassword"
+placeholder="Confirm Password">
+
+<label>Aadhaar Number</label>
+<input
+type="text"
+id="newAgentAadhaar"
+placeholder="1234 5678 9012">
+
+<button onclick="saveAgent()">
+Create Agent
+</button>
+
+</div>
+
+</div>
 <script>
+    function openAgentPopup(){
+
+document.getElementById("agentPopup")
+.style.display="flex";
+
+}
+
+function saveAgent(){
+
+let id =
+document.getElementById("newAgentId").value;
+
+let name =
+document.getElementById("newAgentName").value;
+
+let phone =
+document.getElementById("newAgentPhone").value;
+
+let balance =
+document.getElementById("newAgentBalance").value;
+
+alert(
+"Agent Added Successfully\n\n"+
+"ID: "+id+"\n"+
+"Name: "+name
+);
+
+document.getElementById("agentPopup")
+.style.display="none";
+
+}
 
 const agents = {
 
