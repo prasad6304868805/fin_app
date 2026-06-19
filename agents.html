@@ -259,27 +259,45 @@ box-shadow:0 10px 25px rgba(34,197,94,.35);
 @media(max-width:768px){
 
 body{
-flex-direction:column;
+display:block;
+padding-bottom:90px;
 }
+
+/* Top Header */
 
 .sidebar{
 width:100%;
 padding:15px;
+border-right:none;
+border-bottom:1px solid #CFE5FF;
 }
 
 .logo{
 text-align:center;
-margin-bottom:20px;
+font-size:28px;
+margin-bottom:15px;
 }
+
+/* Navigation */
 
 .menu{
 display:flex;
-justify-content:space-around;
+justify-content:space-between;
+gap:10px;
 }
 
 .menu li{
-margin-bottom:0;
+flex:1;
+margin:0;
 }
+
+.menu a{
+padding:12px;
+font-size:14px;
+text-align:center;
+}
+
+/* Main Content */
 
 .main{
 padding:15px;
@@ -287,9 +305,13 @@ padding:15px;
 
 .header{
 flex-direction:column;
-text-align:center;
-gap:15px;
+align-items:flex-start;
+gap:10px;
 padding:20px;
+}
+
+.header h1{
+font-size:24px;
 }
 
 .profile{
@@ -297,8 +319,11 @@ width:100%;
 text-align:center;
 }
 
+/* Search + Add Agent */
+
 .search-container{
 flex-direction:column;
+gap:10px;
 }
 
 .search{
@@ -306,12 +331,17 @@ width:100%;
 }
 
 .search input{
-width:100%;
+font-size:16px;
+height:50px;
 }
 
 .add-agent-btn{
 width:100%;
+height:50px;
+font-size:16px;
 }
+
+/* Agent Cards */
 
 .agent-grid{
 grid-template-columns:1fr;
@@ -319,50 +349,66 @@ gap:15px;
 }
 
 .agent-card{
+display:flex;
+align-items:center;
+text-align:left;
+gap:15px;
 padding:20px;
 }
 
 .avatar{
-width:80px;
-height:80px;
-font-size:30px;
+width:70px;
+height:70px;
+font-size:28px;
+margin:0;
+flex-shrink:0;
 }
 
 .agent-card h3{
-font-size:20px;
+font-size:18px;
+margin-top:0;
 }
 
 .amount{
-font-size:24px;
+font-size:22px;
+margin-top:8px;
+}
+
+.label{
+font-size:13px;
 }
 
 .collection{
-font-size:14px;
+margin-top:10px;
+font-size:13px;
+display:inline-block;
 }
+
+/* Popup */
 
 .popup-box{
 width:95%;
-padding:20px;
 max-height:90vh;
 overflow-y:auto;
-}
-
-.popup-box h2{
-font-size:22px;
+padding:20px;
 }
 
 .popup-box input{
+height:50px;
 font-size:16px;
 }
+
+/* Floating Button */
 
 .pay-btn{
 left:50%;
 transform:translateX(-50%);
 bottom:15px;
 width:90%;
-max-width:320px;
+max-width:350px;
 height:55px;
 font-size:18px;
+z-index:999;
 }
 
 }
